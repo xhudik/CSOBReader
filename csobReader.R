@@ -22,16 +22,11 @@ if((is.null(file)==TRUE) || (file.access(file) == -1)) {
   stop(print("File was not specified (-f parameter), or doesnt exists. \tExit ..."))
 }
 
-#take directory
-dir <- dirname(file)
-
 tmpfile <- tempfile(pattern = "tmp__")
 system(paste0("iconv -f cp1250 -t utf-8 ",file," | dos2unix > ", tmpfile))
 
 #read whole file as a string; file NEEDS to be converted to UTF8 and unix line ends
 b <-  readChar(con = tmpfile, nchars = 100000)
-
-#close(stdin)
 
 #subsitute \n for a special UTf-8 - working with \n is not convenient
 c <- b %>% str_replace_all(pattern = "\\n","Ξ")
@@ -89,5 +84,4 @@ comments <- tmp %>% str_replace("Ξ$","") %>%  str_trim()
 
 db <- tibble(id=ids, date = dates, type=types, amount = amounts, acc_name = acc_names, account = accounts, VS = VSs, KS = KSs, SS = SSs, comment = comments, original = originals)
 
-filename <- paste0("CSOB_",yearmonth[1],"_",yearmonth[2],".csv")
 write.csv(x = db,file = stdout(),row.names = FALSE)

@@ -6,7 +6,12 @@
 This small project read strange txt printout and put into proper tibble (table) wich is saved to disk in the end. 
 The Output table can be further processed. *CSOB_reader* might come handy normal people (who wants to process/understand 
 their financial input/outputs), or small non-profit institutions like committee of flat owners who do not want 
-to spend money on pricey API for simple automatic account chekcing.
+to spend money on pricey API for simple automatic account checking.
+
+Run:
+```
+./csobReader.R -f printout.txt > CSOB1707.csv
+```
 
 
 An example of output' table:
