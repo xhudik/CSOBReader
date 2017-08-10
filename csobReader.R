@@ -6,16 +6,21 @@ library(stringr)
 library(optparse)
 
 
+
 option_list <- list(
   make_option(c("-f", "--file"), type="character", 
-              help="File name of CSOB printout (txt)")
+              help="File name of CSOB printout (txt)"),
+  make_option(c("-v", "--verbose"), action="store_true", default=FALSE,
+             help="Print extra output (debug purposes)")
   )
 
 
-#get option from command line
+#parse options from command line
 opt <- parse_args(OptionParser(option_list=option_list,
                                usage = "Usage: %prog -f CSOBprintout.txt > CSOB_1707.csv"))
 
+#set variables based on command line options
+options(echo = opt$verbose)
 file <- opt$file
 
 if((is.null(file)==TRUE) || (file.access(file) == -1)) {
