@@ -20,6 +20,7 @@ An example of output' table:
 
 Czech version:
 
-*CSOB_reader* cte vypisy a formatuje je do tibble (tabulka) formatu, kt. je nasledne ulozen jako CSV soubor. Poslouzi 
-beznym lidem, co chteji mit prehled o svych uctech, prip.  malym neziskovkam (jako Spolecenstvi vlastniku jednotek) pro
-spravu jejich uctu (neni potreba mit CSOB API na zpracovavani dat)
+*CSOB_reader* cte vypisy a formatuje je do ![tibble](https://github.com/tidyverse/tibble) (tabulka) formatu, 
+kt. je nasledne ulozen jako CSV soubor. 
+Poslouzi beznym lidem, co chteji mit prehled o svych uctech, prip.  malym neziskovkam 
+(jako Spolecenstvi vlastniku jednotek) pro spravu jejich uctu (neni potreba mit CSOB API na zpracovavani dat)
