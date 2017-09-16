@@ -16,15 +16,18 @@ option_list <- list(
 
 
 #parse options from command line
-opt <- parse_args(OptionParser(option_list=option_list,
-                               usage = "Usage: %prog -f CSOBprintout.txt > CSOB_1707.csv"))
+opt_obj <- OptionParser(option_list=option_list,
+             usage = "Usage: %prog -f CSOBprintout.txt > CSOB_1707.csv")
+opt <- parse_args(opt_obj)
 
 #set variables based on command line options
 options(echo = opt$verbose)
 file <- opt$file
 
 if((is.null(file)==TRUE) || (file.access(file) == -1)) {
-  stop(print("File was not specified (-f parameter), or doesnt exists. \tExit ..."))
+  print_help(opt_obj)
+  
+  stop(sprintf("File was not specified (-f parameter), or doesnt exists. \tExit ...\n", stderr()))
 }
 
 tmpfile <- tempfile(pattern = "tmp__")
