@@ -1,0 +1,16 @@
+Package: CSOBReader
+Title: Read and process CSOB printouts
+Version: 0.1
+Authors@R: person("Tomas", "Hudik", email = "xhudik@gmail.com",
+                  role = c("aut", "cre"))
+Description: CSOBReader reads and process CSOB (a bank, KBC dauther) printouts. 
+    It was developed to process monthly printouts but likely it 
+    can manage all kinds of CSOB printouts
+Depends: R (>= 3.1.0)
+License: GPL 3
+LazyData: true
+Imports: tibble,
+         dplyr,
+         gmailr,
+         stringr
+RoxygenNote: 6.0.1

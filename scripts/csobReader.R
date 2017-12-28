@@ -4,6 +4,7 @@ library(dplyr, warn.conflicts=FALSE)
 library(tibble)
 library(stringr)
 library(optparse)
+#library()
 
 
 
@@ -93,3 +94,21 @@ comments <- tmp %>% str_replace("Ξ$","") %>%  str_trim()
 db <- tibble(id=ids, date = dates, type=types, amount = amounts, acc_name = acc_names, account = accounts, VS = VSs, KS = KSs, SS = SSs, comment = comments, original = originals)
 
 write.csv(x = db,file = stdout(),row.names = FALSE)
+
+
+######################################
+#### Processing acquired data ########
+######################################
+#library(readr)
+##read month1 ... month 12
+# m1 <- read_csv("CSOB_1701.csv")
+# ...
+# m12 <- read_csv("CSOB_17012.csv")
+#
+##check a random month
+#View(m7)
+#
+## bind all months into 1 tibble
+#y <- m1 %>% bind_row(m2)
+#y <- y %>% bind_row(m3)
+# ...
