@@ -1,6 +1,6 @@
-# CSOB_reader
+# CSOBReader
 
-*CSOB* (a bank in czech rep.) has strange monthly printouts (various formats but no CSV-like format). 
+*CSOB* (a bank in Czech Rep., KBC daughter) has strange monthly printouts (various formats but no CSV-like format). 
 
 
 This small project read strange txt printout and put into proper tibble (table) wich is saved to disk in the end. 
@@ -10,7 +10,7 @@ to spend money on pricey API for simple automatic account checking.
 
 Run:
 ```
-./csobReader.R -f printout.txt > CSOB1707.csv
+Rscript CSOBReader/scripts/csobReader.R -f printout.txt > CSOB1707.csv
 ```
 
 
