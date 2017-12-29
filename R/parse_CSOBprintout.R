@@ -1,5 +1,5 @@
 #' Read/parse CSOB(bank) printout
-#' @import dplyr tibble stringr
+#' @import magrittr tibble stringr
 #' @param file CSOB printout, txt, needs to be UTF-8 with Linux line endings
 #' @return A tibble with all transactions
 #' @examples

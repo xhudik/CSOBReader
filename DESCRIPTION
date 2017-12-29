@@ -9,8 +9,8 @@ Description: CSOBReader reads and process CSOB (a bank, KBC dauther) printouts.
 Depends: R (>= 3.1.0)
 License: GPL 3
 LazyData: true
-Imports: tibble,
-         dplyr,
+Imports: magrittr,
+         tibble,
          gmailr,
          stringr
 RoxygenNote: 6.0.1

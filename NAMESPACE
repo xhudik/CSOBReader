@@ -2,7 +2,7 @@
 
 export(getPrintoutFromGmail)
 export(parse_CSOBprintout)
-import(dplyr)
 import(gmailr)
+import(magrittr)
 import(stringr)
 import(tibble)
