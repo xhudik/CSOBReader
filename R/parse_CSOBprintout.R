@@ -10,7 +10,7 @@
 #' @export
 parse_CSOBprintout <- function(file){
   #read whole file as a string; file NEEDS to be converted to UTF8 and unix line ends
-  b <-  readChar(con = tmpfile, nchars = 100000)
+  b <-  readChar(con = file, nchars = 100000)
   
   #subsitute \n for a special UTf-8 - working with \n is not convenient
   c <- b %>% str_replace_all(pattern = "\\n","Ξ")
@@ -66,7 +66,9 @@ parse_CSOBprintout <- function(file){
   
   
   
-  db <- tibble(id=ids, date = dates, type=types, amount = amounts, acc_name = acc_names, account = accounts, VS = VSs, KS = KSs, SS = SSs, comment = comments, original = originals)
+  db <- tibble(id=ids, date = as.Date(dates,"%Y-%m-%d"), type=types, amount = as.numeric(amounts), 
+               acc_name = acc_names, account = accounts, VS = VSs, KS = KSs, SS = SSs, 
+               comment = comments, original = originals)
 }
 
 

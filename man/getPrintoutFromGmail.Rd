@@ -4,20 +4,26 @@
 \alias{getPrintoutFromGmail}
 \title{Download CSOB printouts from Gmail}
 \usage{
-getPrintoutFromGmail(year = 2017)
+getPrintoutFromGmail(account = "173961977", year = 2017,
+  subject = "ČSOB Info 24 - Výpis z účtu")
 }
 \arguments{
+\item{account}{your CSOB account}
+
 \item{year}{for what year printouts should be downloaded}
+
+\item{subject}{Subject of printouts (usuallym default is fine)}
 }
 \value{
 A tibble with all transactions
 }
 \description{
-Download CSOB printouts from Gmail
+This function can be called from an environment which has a browser (for authenitification). Once the user is authentificated, 
+his gmail account is searched for particular messages based on the input arguments.
 }
 \examples{
 \dontrun{
-getPrintoutFromGmail(year = 2018)
+getPrintoutFromGmail(account = "173961977", year = 2018)
 }
 
 }
